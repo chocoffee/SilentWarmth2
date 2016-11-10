@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC212E681DD448E2003A400C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC212E671DD448E2003A400C /* AppDelegate.swift */; };
+		AC212E6A1DD448E2003A400C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC212E691DD448E2003A400C /* ViewController.swift */; };
+		AC212E6D1DD448E2003A400C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC212E6B1DD448E2003A400C /* Main.storyboard */; };
+		AC212E6F1DD448E2003A400C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC212E6E1DD448E2003A400C /* Assets.xcassets */; };
+		AC212E721DD448E2003A400C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC212E701DD448E2003A400C /* LaunchScreen.storyboard */; };
+		AC212E7D1DD448E2003A400C /* SilentWarmthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC212E7C1DD448E2003A400C /* SilentWarmthTests.swift */; };
+		AC212E881DD448E2003A400C /* SilentWarmthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC212E871DD448E2003A400C /* SilentWarmthUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC212E791DD448E2003A400C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC212E5C1DD448E1003A400C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC212E631DD448E1003A400C;
+			remoteInfo = SilentWarmth;
+		};
+		AC212E841DD448E2003A400C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC212E5C1DD448E1003A400C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC212E631DD448E1003A400C;
+			remoteInfo = SilentWarmth;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AC212E641DD448E2003A400C /* SilentWarmth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilentWarmth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC212E671DD448E2003A400C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AC212E691DD448E2003A400C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AC212E6C1DD448E2003A400C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AC212E6E1DD448E2003A400C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC212E711DD448E2003A400C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC212E731DD448E2003A400C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC212E781DD448E2003A400C /* SilentWarmthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SilentWarmthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC212E7C1DD448E2003A400C /* SilentWarmthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilentWarmthTests.swift; sourceTree = "<group>"; };
+		AC212E7E1DD448E2003A400C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC212E831DD448E2003A400C /* SilentWarmthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SilentWarmthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC212E871DD448E2003A400C /* SilentWarmthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilentWarmthUITests.swift; sourceTree = "<group>"; };
+		AC212E891DD448E2003A400C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC212E611DD448E1003A400C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC212E751DD448E2003A400C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC212E801DD448E2003A400C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC212E5B1DD448E1003A400C = {
+			isa = PBXGroup;
+			children = (
+				AC212E661DD448E2003A400C /* SilentWarmth */,
+				AC212E7B1DD448E2003A400C /* SilentWarmthTests */,
+				AC212E861DD448E2003A400C /* SilentWarmthUITests */,
+				AC212E651DD448E2003A400C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC212E651DD448E2003A400C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC212E641DD448E2003A400C /* SilentWarmth.app */,
+				AC212E781DD448E2003A400C /* SilentWarmthTests.xctest */,
+				AC212E831DD448E2003A400C /* SilentWarmthUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC212E661DD448E2003A400C /* SilentWarmth */ = {
+			isa = PBXGroup;
+			children = (
+				AC212E671DD448E2003A400C /* AppDelegate.swift */,
+				AC212E691DD448E2003A400C /* ViewController.swift */,
+				AC212E6B1DD448E2003A400C /* Main.storyboard */,
+				AC212E6E1DD448E2003A400C /* Assets.xcassets */,
+				AC212E701DD448E2003A400C /* LaunchScreen.storyboard */,
+				AC212E731DD448E2003A400C /* Info.plist */,
+			);
+			path = SilentWarmth;
+			sourceTree = "<group>";
+		};
+		AC212E7B1DD448E2003A400C /* SilentWarmthTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC212E7C1DD448E2003A400C /* SilentWarmthTests.swift */,
+				AC212E7E1DD448E2003A400C /* Info.plist */,
+			);
+			path = SilentWarmthTests;
+			sourceTree = "<group>";
+		};
+		AC212E861DD448E2003A400C /* SilentWarmthUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AC212E871DD448E2003A400C /* SilentWarmthUITests.swift */,
+				AC212E891DD448E2003A400C /* Info.plist */,
+			);
+			path = SilentWarmthUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC212E631DD448E1003A400C /* SilentWarmth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC212E8C1DD448E2003A400C /* Build configuration list for PBXNativeTarget "SilentWarmth" */;
+			buildPhases = (
+				AC212E601DD448E1003A400C /* Sources */,
+				AC212E611DD448E1003A400C /* Frameworks */,
+				AC212E621DD448E1003A400C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SilentWarmth;
+			productName = SilentWarmth;
+			productReference = AC212E641DD448E2003A400C /* SilentWarmth.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AC212E771DD448E2003A400C /* SilentWarmthTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC212E8F1DD448E2003A400C /* Build configuration list for PBXNativeTarget "SilentWarmthTests" */;
+			buildPhases = (
+				AC212E741DD448E2003A400C /* Sources */,
+				AC212E751DD448E2003A400C /* Frameworks */,
+				AC212E761DD448E2003A400C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC212E7A1DD448E2003A400C /* PBXTargetDependency */,
+			);
+			name = SilentWarmthTests;
+			productName = SilentWarmthTests;
+			productReference = AC212E781DD448E2003A400C /* SilentWarmthTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AC212E821DD448E2003A400C /* SilentWarmthUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC212E921DD448E2003A400C /* Build configuration list for PBXNativeTarget "SilentWarmthUITests" */;
+			buildPhases = (
+				AC212E7F1DD448E2003A400C /* Sources */,
+				AC212E801DD448E2003A400C /* Frameworks */,
+				AC212E811DD448E2003A400C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC212E851DD448E2003A400C /* PBXTargetDependency */,
+			);
+			name = SilentWarmthUITests;
+			productName = SilentWarmthUITests;
+			productReference = AC212E831DD448E2003A400C /* SilentWarmthUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC212E5C1DD448E1003A400C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = chocoffee;
+				TargetAttributes = {
+					AC212E631DD448E1003A400C = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 3457D6786D;
+						ProvisioningStyle = Automatic;
+					};
+					AC212E771DD448E2003A400C = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 3457D6786D;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AC212E631DD448E1003A400C;
+					};
+					AC212E821DD448E2003A400C = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 3457D6786D;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AC212E631DD448E1003A400C;
+					};
+				};
+			};
+			buildConfigurationList = AC212E5F1DD448E1003A400C /* Build configuration list for PBXProject "SilentWarmth" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC212E5B1DD448E1003A400C;
+			productRefGroup = AC212E651DD448E2003A400C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC212E631DD448E1003A400C /* SilentWarmth */,
+				AC212E771DD448E2003A400C /* SilentWarmthTests */,
+				AC212E821DD448E2003A400C /* SilentWarmthUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC212E621DD448E1003A400C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC212E721DD448E2003A400C /* LaunchScreen.storyboard in Resources */,
+				AC212E6F1DD448E2003A400C /* Assets.xcassets in Resources */,
+				AC212E6D1DD448E2003A400C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC212E761DD448E2003A400C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC212E811DD448E2003A400C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC212E601DD448E1003A400C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC212E6A1DD448E2003A400C /* ViewController.swift in Sources */,
+				AC212E681DD448E2003A400C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC212E741DD448E2003A400C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC212E7D1DD448E2003A400C /* SilentWarmthTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC212E7F1DD448E2003A400C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC212E881DD448E2003A400C /* SilentWarmthUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC212E7A1DD448E2003A400C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC212E631DD448E1003A400C /* SilentWarmth */;
+			targetProxy = AC212E791DD448E2003A400C /* PBXContainerItemProxy */;
+		};
+		AC212E851DD448E2003A400C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC212E631DD448E1003A400C /* SilentWarmth */;
+			targetProxy = AC212E841DD448E2003A400C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AC212E6B1DD448E2003A400C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC212E6C1DD448E2003A400C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AC212E701DD448E2003A400C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC212E711DD448E2003A400C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC212E8A1DD448E2003A400C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC212E8B1DD448E2003A400C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC212E8D1DD448E2003A400C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3457D6786D;
+				INFOPLIST_FILE = SilentWarmth/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.cafeblog.chocoffee.SilentWarmth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		AC212E8E1DD448E2003A400C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3457D6786D;
+				INFOPLIST_FILE = SilentWarmth/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.cafeblog.chocoffee.SilentWarmth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		AC212E901DD448E2003A400C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 3457D6786D;
+				INFOPLIST_FILE = SilentWarmthTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.cafeblog.chocoffee.SilentWarmthTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SilentWarmth.app/SilentWarmth";
+			};
+			name = Debug;
+		};
+		AC212E911DD448E2003A400C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 3457D6786D;
+				INFOPLIST_FILE = SilentWarmthTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.cafeblog.chocoffee.SilentWarmthTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SilentWarmth.app/SilentWarmth";
+			};
+			name = Release;
+		};
+		AC212E931DD448E2003A400C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 3457D6786D;
+				INFOPLIST_FILE = SilentWarmthUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.cafeblog.chocoffee.SilentWarmthUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SilentWarmth;
+			};
+			name = Debug;
+		};
+		AC212E941DD448E2003A400C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 3457D6786D;
+				INFOPLIST_FILE = SilentWarmthUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.cafeblog.chocoffee.SilentWarmthUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SilentWarmth;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC212E5F1DD448E1003A400C /* Build configuration list for PBXProject "SilentWarmth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC212E8A1DD448E2003A400C /* Debug */,
+				AC212E8B1DD448E2003A400C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC212E8C1DD448E2003A400C /* Build configuration list for PBXNativeTarget "SilentWarmth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC212E8D1DD448E2003A400C /* Debug */,
+				AC212E8E1DD448E2003A400C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AC212E8F1DD448E2003A400C /* Build configuration list for PBXNativeTarget "SilentWarmthTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC212E901DD448E2003A400C /* Debug */,
+				AC212E911DD448E2003A400C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AC212E921DD448E2003A400C /* Build configuration list for PBXNativeTarget "SilentWarmthUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC212E931DD448E2003A400C /* Debug */,
+				AC212E941DD448E2003A400C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC212E5C1DD448E1003A400C /* Project object */;
+}
