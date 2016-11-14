@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC0045821DD57028009E135F /* BubbleTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0045811DD57028009E135F /* BubbleTransition.framework */; };
+		AC0045851DD58285009E135F /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0045841DD58285009E135F /* HelpViewController.swift */; };
 		AC212E681DD448E2003A400C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC212E671DD448E2003A400C /* AppDelegate.swift */; };
 		AC212E6A1DD448E2003A400C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC212E691DD448E2003A400C /* ViewController.swift */; };
 		AC212E6D1DD448E2003A400C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC212E6B1DD448E2003A400C /* Main.storyboard */; };
@@ -14,6 +16,11 @@
 		AC212E721DD448E2003A400C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC212E701DD448E2003A400C /* LaunchScreen.storyboard */; };
 		AC212E7D1DD448E2003A400C /* SilentWarmthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC212E7C1DD448E2003A400C /* SilentWarmthTests.swift */; };
 		AC212E881DD448E2003A400C /* SilentWarmthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC212E871DD448E2003A400C /* SilentWarmthUITests.swift */; };
+		AC212E961DD44D15003A400C /* SendWarmthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC212E951DD44D15003A400C /* SendWarmthViewController.swift */; };
+		AC212E981DD45682003A400C /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC212E971DD45682003A400C /* TableViewCell.swift */; };
+		AC2E19AF1DD9988800C8A1AE /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2E19AE1DD9988800C8A1AE /* Base.swift */; };
+		ACD199021DD97DEA009AC564 /* InviteWarmthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD199011DD97DEA009AC564 /* InviteWarmthViewController.swift */; };
+		ACD199041DD97E0B009AC564 /* MurmurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD199031DD97E0B009AC564 /* MurmurViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC0045811DD57028009E135F /* BubbleTransition.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BubbleTransition.framework; path = Carthage/Build/iOS/BubbleTransition.framework; sourceTree = "<group>"; };
+		AC0045841DD58285009E135F /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		AC212E641DD448E2003A400C /* SilentWarmth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilentWarmth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC212E671DD448E2003A400C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC212E691DD448E2003A400C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +56,11 @@
 		AC212E831DD448E2003A400C /* SilentWarmthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SilentWarmthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC212E871DD448E2003A400C /* SilentWarmthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilentWarmthUITests.swift; sourceTree = "<group>"; };
 		AC212E891DD448E2003A400C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC212E951DD44D15003A400C /* SendWarmthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendWarmthViewController.swift; sourceTree = "<group>"; };
+		AC212E971DD45682003A400C /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		AC2E19AE1DD9988800C8A1AE /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		ACD199011DD97DEA009AC564 /* InviteWarmthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteWarmthViewController.swift; sourceTree = "<group>"; };
+		ACD199031DD97E0B009AC564 /* MurmurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MurmurViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC0045821DD57028009E135F /* BubbleTransition.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC0045801DD57028009E135F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC0045811DD57028009E135F /* BubbleTransition.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AC212E5B1DD448E1003A400C = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +104,7 @@
 				AC212E7B1DD448E2003A400C /* SilentWarmthTests */,
 				AC212E861DD448E2003A400C /* SilentWarmthUITests */,
 				AC212E651DD448E2003A400C /* Products */,
+				AC0045801DD57028009E135F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +127,12 @@
 				AC212E6E1DD448E2003A400C /* Assets.xcassets */,
 				AC212E701DD448E2003A400C /* LaunchScreen.storyboard */,
 				AC212E731DD448E2003A400C /* Info.plist */,
+				AC212E951DD44D15003A400C /* SendWarmthViewController.swift */,
+				ACD199011DD97DEA009AC564 /* InviteWarmthViewController.swift */,
+				AC212E971DD45682003A400C /* TableViewCell.swift */,
+				AC0045841DD58285009E135F /* HelpViewController.swift */,
+				ACD199031DD97E0B009AC564 /* MurmurViewController.swift */,
+				AC2E19AE1DD9988800C8A1AE /* Base.swift */,
 			);
 			path = SilentWarmth;
 			sourceTree = "<group>";
@@ -135,6 +165,7 @@
 				AC212E601DD448E1003A400C /* Sources */,
 				AC212E611DD448E1003A400C /* Frameworks */,
 				AC212E621DD448E1003A400C /* Resources */,
+				AC0045831DD57039009E135F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -257,13 +288,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AC0045831DD57039009E135F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/BubbleTransition.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AC212E601DD448E1003A400C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC2E19AF1DD9988800C8A1AE /* Base.swift in Sources */,
+				ACD199021DD97DEA009AC564 /* InviteWarmthViewController.swift in Sources */,
+				AC212E961DD44D15003A400C /* SendWarmthViewController.swift in Sources */,
+				AC212E981DD45682003A400C /* TableViewCell.swift in Sources */,
 				AC212E6A1DD448E2003A400C /* ViewController.swift in Sources */,
+				ACD199041DD97E0B009AC564 /* MurmurViewController.swift in Sources */,
 				AC212E681DD448E2003A400C /* AppDelegate.swift in Sources */,
+				AC0045851DD58285009E135F /* HelpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +470,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3457D6786D;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SilentWarmth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.cafeblog.chocoffee.SilentWarmth;
@@ -429,6 +487,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3457D6786D;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SilentWarmth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.cafeblog.chocoffee.SilentWarmth;
@@ -514,6 +576,7 @@
 				AC212E8E1DD448E2003A400C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC212E8F1DD448E2003A400C /* Build configuration list for PBXNativeTarget "SilentWarmthTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +585,7 @@
 				AC212E911DD448E2003A400C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC212E921DD448E2003A400C /* Build configuration list for PBXNativeTarget "SilentWarmthUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +594,7 @@
 				AC212E941DD448E2003A400C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
