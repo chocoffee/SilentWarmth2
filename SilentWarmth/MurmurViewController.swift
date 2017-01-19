@@ -67,9 +67,8 @@ class MurmurViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         let colorIndex = colorPicker.selectedRow(inComponent: 0)
         var str = ""
         self.advertiseData = [[2], [messageIndex], [colorIndex]]
-        str.append("\(Values.message[messageIndex]),\n\(Values.color[colorIndex])")
+        str.append("\(Values.message[messageIndex]),\n服：\(Values.color[colorIndex])")
         
-        vc?.changedEvent(data)
         setAlert(str)
     }
     
@@ -90,6 +89,15 @@ class MurmurViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         let advertisementData = [CBAdvertisementDataServiceUUIDsKey:[service.uuid]] as [String : Any]
         peripheralManager.startAdvertising(advertisementData)
+        _ = Timer.scheduledTimer(timeInterval: 180.0, target: self, selector: #selector(stopAdvertise), userInfo: nil, repeats: false)
+        
+        vc?.changedEvent(data)
+        let nextVC = self.storyboard!.instantiateViewController(withIdentifier: "MatchViewController")
+        if let vc = nextVC as? MatchViewController{
+            vc.data = data
+            vc.from = 1
+        }
+        present(nextVC, animated: true, completion: nil)
         
     }
     
@@ -112,5 +120,10 @@ class MurmurViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             return
         }
         print("advertising success!")
+    }
+    
+    func stopAdvertise() {
+        peripheralManager.stopAdvertising()
+        print("advertise stopped")
     }
 }

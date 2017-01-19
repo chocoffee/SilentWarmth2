@@ -9,45 +9,11 @@
 import UIKit
 import SwiftyJSON
 
-protocol DataEncode {
-    
-}
-
-//protocol DataDecode {   //  Int　→　String
-//    
-//}
-//extension DataDecode {
-//    func decode(_ data: [String : Any]) -> [String]{
-//        var title = ""
-//        var str = ""
-//        
-//        let type = data["type"]
-//        
-//        
-////        switch data["type"] {
-////        case "send":
-////            title = "マッチしました"
-////            str = "\(data["mColor"])色の人が席を譲ってくれそうです"
-////        case "invite":
-////            title = "マッチしました"
-////            str = "\(Values.color[data[2][0]])色の服の\(Values.attribute[data[1][0]])が席を探しています"
-////        case "murmur":
-////            title = "メッセージを受信しました"
-////            str = "\(Values.message[data[1][0]])"
-////        default:
-////            title = "hoge"
-////            str = "hogehoge"
-////        }
-//        let ary = [title, str]
-//        return ary
-//    }
-//}
-
 class TestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     var ary = [[String : Any]]()    //  dataが入ってくる
-    var nowAry = [String : Any]()
+    var str = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,12 +37,44 @@ class TestViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! NotifyListTableViewCell
         let tmp = ary[indexPath.row]
-        cell.titleLabel?.text = tmp["type"] as! String?
-        cell.strLabel?.text = tmp["myColor"] as! String?
+        
+        switch tmp["type"] as! String {
+        case "send":
+            cell.titleLabel.text = "ゆずります"
+            if let target = tmp["target"] as? [String] {
+                cell.strLabel.text = "\(target.joined(separator: ","))にゆずります！服は\(tmp["myColor"] ?? "")です。"
+            }
+            break
+        case "invite":
+            cell.titleLabel.text = "席を探しています"
+            if tmp["isEdge"] as! Bool{
+                str = "端の席を希望します。"
+            }
+            cell.strLabel.text = "私は\(tmp["attribute"] ?? "")、服は\(tmp["myColor"] ?? "")です。\(str)"
+            break
+        case "murmur":
+            cell.titleLabel.text = "メッセージを受信しました"
+            cell.strLabel.text = "\(tmp["myColor"] ?? "")の服の人が「\(tmp["message"] ?? "")」と言っています。"
+            break
+        case "help":
+            cell.titleLabel.text = "助けてください"
+            cell.strLabel.text = "\(tmp["oColor"] ?? "")色の服の人に痴漢されています。私は\(tmp["myColor"] ?? "")色です。"
+            break
+        default:
+            break
+        }
         return cell
     }
-    
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? MatchDetailViewController {
+            if let indexPath = tableView.indexPathForSelectedRow{
+                vc.data = ary[indexPath.row]
+            }
+        }
+    }
+    
+    
     /*
     // MARK: - Navigation
 

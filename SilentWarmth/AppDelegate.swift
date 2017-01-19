@@ -10,14 +10,17 @@ import UIKit
 import CoreBluetooth
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate{
 
     var window: UIWindow?
+    var centralManager: CBCentralManager!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //startScan()
+        //        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         
+        UINavigationBar.appearance().tintColor = #colorLiteral(red: 0.8156862745, green: 0.1374401427, blue: 0.3137254902, alpha: 1)
         return true
     }
 
@@ -43,7 +46,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
-
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+//        print("background")
+//        let session = WCSession.default()
+//        session.delegate = self
+//        session.activate()
+        completionHandler(UIBackgroundFetchResult.noData)
+    }
+//    
+//    
+//    
+//    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+//        print("hi")
+//        if error != nil {
+//            print("error ::: \(error)")
+//        }
+//    }
+//    
+//    func sessionDidBecomeInactive(_ session: WCSession) {
+//        print("inactive")
+//    }
+//    
+//    func sessionDidDeactivate(_ session: WCSession) {
+//        print("deactivate")
+//    }
+//    
+//    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+//        print("message ::: \(message)")
+////        data = message
+////        advertise()
+//    }
+//    
+//    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+//        print("application context:::\(applicationContext)")
+////        data = applicationContext
+////        advertise()
+//    }
 }
 

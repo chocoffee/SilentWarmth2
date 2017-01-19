@@ -10,6 +10,40 @@ import UIKit
 import CoreBluetooth
 import SwiftyJSON
 
+extension UIView {
+    
+    // 枠線の色
+    @IBInspectable var borderColor: UIColor? {
+        get {
+            return layer.borderColor.map { UIColor(cgColor: $0) }
+        }
+        set {
+            layer.borderColor = newValue?.cgColor
+        }
+    }
+    
+    // 枠線のWidth
+    @IBInspectable var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+    
+    // 角丸設定
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+}
+
 class SendWarmthViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, CBPeripheralDelegate, CBPeripheralManagerDelegate {
     
     @IBOutlet weak var sElderly: UISwitch!
@@ -33,6 +67,10 @@ class SendWarmthViewController: UIViewController, UIPickerViewDelegate, UIPicker
         pickerView.dataSource = self
         
         self.title = "ゆずる"
+        
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        self.navigationItem.backBarButtonItem = backButton
         
         peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
     }
@@ -70,12 +108,9 @@ class SendWarmthViewController: UIViewController, UIPickerViewDelegate, UIPicker
         }
         data["target"] = ary
         data["myColor"] = Values.color[pickerView.selectedRow(inComponent: 0)]
-        data["isEdge"] = false
-        
-        vc?.changedEvent(data)
         
         if str != "" {
-            setAlert("\(str)服：\(data["myColor"]!)")
+            setAlert("ゆずる対象\(str)\n服：\(data["myColor"]!)")
         }else {
             setAlert()
         }
@@ -110,6 +145,16 @@ class SendWarmthViewController: UIViewController, UIPickerViewDelegate, UIPicker
         
         let advertisementData = [CBAdvertisementDataServiceUUIDsKey:[service.uuid]] as [String : Any]
         peripheralManager.startAdvertising(advertisementData)
+        _ = Timer.scheduledTimer(timeInterval: 180.0, target: self, selector: #selector(stopAdvertise), userInfo: nil, repeats: false)
+        
+        vc?.changedEvent(data)
+        
+        let nextVC = self.storyboard!.instantiateViewController(withIdentifier: "MatchViewController")
+        if let viewController = nextVC as? MatchViewController{
+            viewController.data = data
+            viewController.from = 1
+        }
+        present(nextVC, animated: true, completion: nil)
     }
     
     //  service add result
@@ -129,4 +174,10 @@ class SendWarmthViewController: UIViewController, UIPickerViewDelegate, UIPicker
         }
         print("advertising success!")
     }
+    
+    func stopAdvertise() {
+        peripheralManager.stopAdvertising()
+        print("advertise stopped")
+    }
+    
 }

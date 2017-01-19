@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="SilentWarmthWatch" customModuleProvider="target">
+                    <items>
+                        <button width="1" alignment="left" title="受け取ったやつ" id="l0V-Dz-3a0">
+                            <connections>
+                                <segue destination="TgJ-iL-QHc" kind="push" id="sdV-CC-J0X"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="助けを求める" id="jNm-n5-pMP">
+                            <connections>
+                                <segue destination="gRa-J6-4B3" kind="push" id="u8O-07-bf7"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="ゆずる" id="DI1-hb-QlD">
+                            <connections>
+                                <segue destination="97e-c4-7gv" kind="push" id="PKJ-xQ-SDh"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="ゆずってほしい" id="uhU-Qv-hIB">
+                            <connections>
+                                <segue destination="fOv-x7-0Ww" kind="push" id="EDG-Ii-TCA"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="周囲に発信" id="6qV-m7-I9d">
+                            <connections>
+                                <segue destination="BIt-YV-ipv" kind="push" id="lm5-fK-KEz"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-428" y="346"/>
+        </scene>
+        <!--Murmur Set Message Interface Controller-->
+        <scene sceneID="4aG-M2-CaV">
+            <objects>
+                <controller id="BIt-YV-ipv" customClass="MurmurSetMessageInterfaceController" customModule="SilentWarmthWatch_Extension">
+                    <items>
+                        <label alignment="left" text="メッセージを選択" id="hAV-Hf-ZGw"/>
+                        <table alignment="left" id="XjN-qv-jqN">
+                            <items>
+                                <tableRow identifier="tableRow" id="hQ0-ds-I0j" customClass="TableRowController" customModule="SilentWarmthWatch_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="obu-xY-zjU">
+                                        <items>
+                                            <label alignment="left" text="Label" numberOfLines="2" id="hSl-HU-VeG"/>
+                                        </items>
+                                        <connections>
+                                            <segue destination="3SL-3Q-vKh" kind="push" id="9mH-22-gnT"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="messageLabel" destination="hSl-HU-VeG" id="wHf-WS-lMH"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <table alignment="left" id="wpU-Rt-prW"/>
+                        <table alignment="left" id="rFi-pG-Xtz"/>
+                        <table alignment="left" id="i6i-ub-GwS"/>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="XjN-qv-jqN" id="T2G-Ip-Vyj"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="59" y="1070"/>
+        </scene>
+        <!--Mur Mur Set My Color Interface Controller-->
+        <scene sceneID="uhe-DX-EOT">
+            <objects>
+                <controller id="3SL-3Q-vKh" customClass="MurMurSetMyColorInterfaceController" customModule="SilentWarmthWatch_Extension">
+                    <items>
+                        <label alignment="left" text="あなたの服の色" id="6nA-RQ-1Dk"/>
+                        <picker height="85" alignment="left" id="7DB-Uc-bDE">
+                            <connections>
+                                <action selector="pickerChanged:" destination="3SL-3Q-vKh" id="q4f-k7-yFD"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="次へ" id="fSQ-CM-urt">
+                            <connections>
+                                <segue destination="7Ef-bl-LuT" kind="modal" id="eQu-XB-4og"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="colorPicker" destination="7DB-Uc-bDE" id="i6O-2K-c8i"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="333" y="1070"/>
+        </scene>
+        <!--Invite Set Attribute Interface Controller-->
+        <scene sceneID="gkx-22-iQq">
+            <objects>
+                <controller id="fOv-x7-0Ww" customClass="InviteSetAttributeInterfaceController" customModule="SilentWarmthWatch_Extension">
+                    <items>
+                        <label alignment="left" text="あなたは..." id="hF4-ho-T3X"/>
+                        <picker height="85" alignment="left" id="YL8-zJ-ubT">
+                            <connections>
+                                <action selector="pickerChanged:" destination="fOv-x7-0Ww" id="bUj-xf-LCB"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="次へ" id="1fE-zj-daQ">
+                            <connections>
+                                <segue destination="Szp-OM-Qv9" kind="push" id="kIl-ci-RII"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="picker" destination="YL8-zJ-ubT" id="qAX-Sa-df5"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="59" y="744"/>
+        </scene>
+        <!--Invite Set My Color Interface Controller-->
+        <scene sceneID="1oB-q3-dgd">
+            <objects>
+                <controller id="Szp-OM-Qv9" customClass="InviteSetMyColorInterfaceController" customModule="SilentWarmthWatch_Extension">
+                    <items>
+                        <label alignment="left" text="あなたの服の色" id="XFN-s3-PER"/>
+                        <picker height="85" alignment="left" id="L6a-Pj-kS1">
+                            <connections>
+                                <action selector="pickerChanged:" destination="Szp-OM-Qv9" id="HKS-C4-PCP"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="次へ" id="qgs-We-t64">
+                            <connections>
+                                <segue destination="3Rw-Zp-PMQ" kind="push" id="fol-fJ-2x1"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="colorPicker" destination="L6a-Pj-kS1" id="ZLn-mj-vMl"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="333" y="744"/>
+        </scene>
+        <!--Invite Set Is Edge Interface Controller-->
+        <scene sceneID="OGo-0z-kvk">
+            <objects>
+                <controller id="3Rw-Zp-PMQ" customClass="InviteSetIsEdgeInterfaceController" customModule="SilentWarmthWatch_Extension">
+                    <items>
+                        <switch width="1" alignment="left" value="YES" numberOfLines="2" id="HaE-4Y-YCD">
+                            <connections>
+                                <action selector="switchChanged:" destination="3Rw-Zp-PMQ" id="yom-eK-dSM"/>
+                            </connections>
+                        </switch>
+                        <button width="1" alignment="left" title="次へ" id="D2A-op-g4c">
+                            <connections>
+                                <segue destination="7Ef-bl-LuT" kind="modal" id="10H-8m-yaV"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="edgeSwitch" destination="HaE-4Y-YCD" id="FVe-5w-Sn5"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="624" y="744"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="K2V-ci-869">
+            <objects>
+                <controller id="TgJ-iL-QHc">
+                    <items>
+                        <table alignment="left" id="bOL-8x-8xl">
+                            <items>
+                                <tableRow id="hMb-PF-2Kc">
+                                    <group key="rootItem" width="1" height="34" alignment="left" id="Ey3-MD-x6L">
+                                        <items>
+                                            <label alignment="left" text="Label" id="hPb-9x-BdX"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="59" y="-346"/>
+        </scene>
+        <!--助けを求める-->
+        <scene sceneID="K1H-of-0Lt">
+            <objects>
+                <controller title="助けを求める" id="gRa-J6-4B3" customClass="HelpSetMyColorInterfaceController" customModule="SilentWarmthWatch_Extension">
+                    <items>
+                        <label alignment="left" text="あなたの服の色" id="ILA-CW-vW2"/>
+                        <picker height="84" alignment="left" id="O36-o1-7T4">
+                            <connections>
+                                <action selector="pickerChanged:" destination="gRa-J6-4B3" id="sOe-kb-Obr"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="次へ" id="wk0-tw-3Zp">
+                            <connections>
+                                <segue destination="ioK-yy-b8C" kind="push" id="J7V-Md-ebZ"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="colorPicker" destination="O36-o1-7T4" id="DaM-Xh-XL3"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="59" y="-31"/>
+        </scene>
+        <!--Help Set Other Color Interface Controller-->
+        <scene sceneID="pEK-Hw-yGh">
+            <objects>
+                <controller id="ioK-yy-b8C" customClass="HelpSetOtherColorInterfaceController" customModule="SilentWarmthWatch_Extension">
+                    <items>
+                        <label alignment="left" text="加害者の服の色" id="U6u-Op-kf4"/>
+                        <picker height="85" alignment="left" id="jYk-gv-UYp">
+                            <connections>
+                                <action selector="pickerChanged:" destination="ioK-yy-b8C" id="tlG-we-zGG"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="次へ" id="pGC-pa-1i0">
+                            <connections>
+                                <segue destination="7Ef-bl-LuT" kind="modal" id="5Fh-fh-nEx"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="colorPicker" destination="jYk-gv-UYp" id="3hX-Td-CTa"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="333" y="-31"/>
+        </scene>
+        <!--Set Target Interface Controller-->
+        <scene sceneID="t1m-jn-x5J">
+            <objects>
+                <controller id="97e-c4-7gv" customClass="SetTargetInterfaceController" customModule="SilentWarmthWatch_Extension">
+                    <items>
+                        <label alignment="left" text="ゆずる相手を選択" id="j2X-l6-8NR"/>
+                        <switch width="1" alignment="left" title="お年寄り" id="ptk-VP-CML">
+                            <connections>
+                                <action selector="elderlyChanged:" destination="97e-c4-7gv" id="cQP-Jz-eam"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="妊婦さん" id="Rel-dW-HZN">
+                            <connections>
+                                <action selector="matanityChanged:" destination="97e-c4-7gv" id="E2G-IL-b2M"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="子連れ" id="3BR-f7-PuM">
+                            <connections>
+                                <action selector="loneChanged:" destination="97e-c4-7gv" id="bN9-v2-8Rr"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="けが人" id="lpW-GV-UpM">
+                            <connections>
+                                <action selector="injuredChanged:" destination="97e-c4-7gv" id="EGS-FE-W1m"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="体調不良" id="3Us-km-cPP">
+                            <connections>
+                                <action selector="sickChanged:" destination="97e-c4-7gv" id="dl6-5b-4ju"/>
+                            </connections>
+                        </switch>
+                        <button width="1" alignment="left" title="次へ" id="Raa-Su-f9f">
+                            <connections>
+                                <segue destination="NoE-Ln-kLX" kind="push" identifier="sendSegue" id="ABx-aU-E9V"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="59" y="345"/>
+        </scene>
+        <!--Set Mycolor Interface Controller-->
+        <scene sceneID="6hU-o1-zBl">
+            <objects>
+                <controller id="NoE-Ln-kLX" customClass="SetMycolorInterfaceController" customModule="SilentWarmthWatch_Extension">
+                    <items>
+                        <label alignment="left" text="あなたの服の色" id="15j-e3-Q3W"/>
+                        <picker height="84" alignment="left" id="eFx-JK-13O">
+                            <connections>
+                                <action selector="pickerChanged:" destination="NoE-Ln-kLX" id="CaS-aw-ueU"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="発信する" id="U7f-1P-Pab">
+                            <connections>
+                                <segue destination="7Ef-bl-LuT" kind="modal" id="tbf-RC-Uis"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="colorPicker" destination="eFx-JK-13O" id="I5u-qq-ApI"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="333" y="372"/>
+        </scene>
+        <!--Confirmation Modal Interface Controller-->
+        <scene sceneID="qgU-xT-0te">
+            <objects>
+                <controller id="7Ef-bl-LuT" customClass="ConfirmationModalInterfaceController" customModule="SilentWarmthWatch_Extension">
+                    <items>
+                        <label alignment="left" text="確認" numberOfLines="0" id="hjT-Ed-rX0"/>
+                        <label alignment="left" text="type" id="wpw-EH-12N"/>
+                        <label alignment="left" text="detail" numberOfLines="0" id="fMK-da-ZMZ"/>
+                        <button width="1" alignment="left" title="発信する" id="BLp-IT-Tg4">
+                            <connections>
+                                <action selector="startAdvertise" destination="7Ef-bl-LuT" id="2UH-Ss-t92"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="detailLabel" destination="fMK-da-ZMZ" id="ShF-ay-QYc"/>
+                        <outlet property="typeLabel" destination="wpw-EH-12N" id="efn-mW-kd5"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1016" y="372"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="59" y="1501"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="SilentWarmthWatch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="333" y="1501"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="5Fh-fh-nEx"/>
+    </inferredMetricsTieBreakers>
+</document>

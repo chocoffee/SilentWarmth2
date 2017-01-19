@@ -73,11 +73,10 @@ class InviteWarmthViewController: UIViewController, UIPickerViewDelegate, UIPick
         data["isEdge"] = isEdge.isOn
         
         str.append(Values.attribute[attributePicker.selectedRow(inComponent: 0)])
-        str.append(" / \(Values.color[colorPicker.selectedRow(inComponent: 0)])")
+        str.append("服：\(Values.color[colorPicker.selectedRow(inComponent: 0)])")
         if isEdge.isOn {
-            str.append(" / edge")
+            str.append("\n端の席を希望する")
         }
-        vc?.changedEvent(data)
         setAlert(str)
     }
     
@@ -108,6 +107,16 @@ class InviteWarmthViewController: UIViewController, UIPickerViewDelegate, UIPick
         let advertisementData = [CBAdvertisementDataServiceUUIDsKey:[service.uuid]] as [String : Any]
         
         peripheralManager.startAdvertising(advertisementData)
+        _ = Timer.scheduledTimer(timeInterval: 180.0, target: self, selector: #selector(stopAdvertise), userInfo: nil, repeats: false)
+        
+        vc?.changedEvent(data)
+        
+        let nextVC = self.storyboard!.instantiateViewController(withIdentifier: "MatchViewController")
+        if let vc = nextVC as? MatchViewController{
+            vc.data = data
+            vc.from = 1
+        }
+        present(nextVC, animated: true, completion: nil)
         
     }
     
@@ -127,5 +136,10 @@ class InviteWarmthViewController: UIViewController, UIPickerViewDelegate, UIPick
             return
         }
         print("advertising success!")
+    }
+    
+    func stopAdvertise() {
+        peripheralManager.stopAdvertising()
+        print("advertise stopped")
     }
 }

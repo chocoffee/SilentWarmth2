@@ -12,7 +12,11 @@
 		7C3B0412E99E2B7B9555C435 /* Pods_SilentWarmthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E20D4B4238133A15B2FD38 /* Pods_SilentWarmthTests.framework */; };
 		AC0045821DD57028009E135F /* BubbleTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0045811DD57028009E135F /* BubbleTransition.framework */; };
 		AC0045851DD58285009E135F /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0045841DD58285009E135F /* HelpViewController.swift */; };
+		AC03E3E81E03AA6300B97C60 /* MurmurSetMessageInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC03E3E71E03AA6300B97C60 /* MurmurSetMessageInterfaceController.swift */; };
+		AC03E3EA1E03AE6500B97C60 /* TableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC03E3E91E03AE6500B97C60 /* TableRowController.swift */; };
 		AC0B03491DF52F0C00D7E135 /* alertImg.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0B03481DF52F0C00D7E135 /* alertImg.png */; };
+		AC1FD92A1E026EC400A88684 /* HelpSetOtherColorInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1FD9291E026EC400A88684 /* HelpSetOtherColorInterfaceController.swift */; };
+		AC1FD92C1E02790A00A88684 /* ConfirmationModalInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1FD92B1E02790A00A88684 /* ConfirmationModalInterfaceController.swift */; };
 		AC212E681DD448E2003A400C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC212E671DD448E2003A400C /* AppDelegate.swift */; };
 		AC212E6A1DD448E2003A400C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC212E691DD448E2003A400C /* ViewController.swift */; };
 		AC212E6D1DD448E2003A400C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC212E6B1DD448E2003A400C /* Main.storyboard */; };
@@ -24,8 +28,33 @@
 		AC2380411DE7E67D0065146A /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2380401DE7E67D0065146A /* TestViewController.swift */; };
 		AC2589A51DEBF9480022EB14 /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2589A41DEBF9480022EB14 /* Values.swift */; };
 		AC2589A91DEC03050022EB14 /* NotifyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2589A81DEC03050022EB14 /* NotifyListTableViewCell.swift */; };
+		AC3BDF901E02602D0032FF08 /* ColorBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3BDF8F1E02602D0032FF08 /* ColorBase.swift */; };
+		AC3BDF921E0268050032FF08 /* HelpSetMyColorInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3BDF911E0268050032FF08 /* HelpSetMyColorInterfaceController.swift */; };
+		AC4159F41E0384F9000C0DF0 /* InviteSetAttributeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4159F31E0384F9000C0DF0 /* InviteSetAttributeInterfaceController.swift */; };
+		AC4159F61E038515000C0DF0 /* InviteSetMyColorInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4159F51E038515000C0DF0 /* InviteSetMyColorInterfaceController.swift */; };
+		AC4159F81E038539000C0DF0 /* InviteSetIsEdgeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4159F71E038539000C0DF0 /* InviteSetIsEdgeInterfaceController.swift */; };
+		AC4159FC1E03857A000C0DF0 /* MurMurSetMyColorInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4159FB1E03857A000C0DF0 /* MurMurSetMyColorInterfaceController.swift */; };
+		AC790F361E0BA978003E83F3 /* SWMatchImgHand.png in Resources */ = {isa = PBXBuildFile; fileRef = AC790F341E0BA978003E83F3 /* SWMatchImgHand.png */; };
+		AC790F371E0BA978003E83F3 /* SWMatchImgHeart.png in Resources */ = {isa = PBXBuildFile; fileRef = AC790F351E0BA978003E83F3 /* SWMatchImgHeart.png */; };
+		AC790F391E0BAA08003E83F3 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC790F381E0BAA08003E83F3 /* MatchViewController.swift */; };
+		AC790F3B1E0BB2EF003E83F3 /* SWMatchImgBoth.png in Resources */ = {isa = PBXBuildFile; fileRef = AC790F3A1E0BB2EF003E83F3 /* SWMatchImgBoth.png */; };
 		AC891F531DE6B4F80006EE82 /* Uuids.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC891F521DE6B4F80006EE82 /* Uuids.swift */; };
+		AC9ECB5C1E249AF900EF06AF /* no_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC9ECB5B1E249AF900EF06AF /* no_sound.wav */; };
 		ACC628C21DDD6B89002E85BE /* AlertBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC628C11DDD6B89002E85BE /* AlertBase.swift */; };
+		ACC740CD1E2C6B5000B7281D /* SWMatchImgMessage.png in Resources */ = {isa = PBXBuildFile; fileRef = ACC740CC1E2C6B5000B7281D /* SWMatchImgMessage.png */; };
+		ACC740CF1E2C726D00B7281D /* MatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC740CE1E2C726D00B7281D /* MatchDetailViewController.swift */; };
+		ACC740D51E2C94C400B7281D /* SWImgBell.png in Resources */ = {isa = PBXBuildFile; fileRef = ACC740D41E2C94C400B7281D /* SWImgBell.png */; };
+		ACCEA64D1DFF8A4D006B756E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACCEA64B1DFF8A4D006B756E /* Interface.storyboard */; };
+		ACCEA64F1DFF8A4D006B756E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACCEA64E1DFF8A4D006B756E /* Assets.xcassets */; };
+		ACCEA6561DFF8A4D006B756E /* SilentWarmthWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ACCEA6551DFF8A4D006B756E /* SilentWarmthWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		ACCEA65D1DFF8A4D006B756E /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEA65C1DFF8A4D006B756E /* InterfaceController.swift */; };
+		ACCEA65F1DFF8A4D006B756E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEA65E1DFF8A4D006B756E /* ExtensionDelegate.swift */; };
+		ACCEA6611DFF8A4D006B756E /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEA6601DFF8A4D006B756E /* NotificationController.swift */; };
+		ACCEA6631DFF8A4D006B756E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACCEA6621DFF8A4D006B756E /* Assets.xcassets */; };
+		ACCEA6671DFF8A4D006B756E /* SilentWarmthWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = ACCEA6491DFF8A4D006B756E /* SilentWarmthWatch.app */; };
+		ACCEA6711DFF9E64006B756E /* SetTargetInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEA6701DFF9E64006B756E /* SetTargetInterfaceController.swift */; };
+		ACCEA6731DFFB1C0006B756E /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEA6721DFFB1C0006B756E /* Values.swift */; };
+		ACCEA6751DFFB729006B756E /* SetMycolorInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEA6741DFFB729006B756E /* SetMycolorInterfaceController.swift */; };
 		ACD199021DD97DEA009AC564 /* InviteWarmthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD199011DD97DEA009AC564 /* InviteWarmthViewController.swift */; };
 		ACD199041DD97E0B009AC564 /* MurmurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD199031DD97E0B009AC564 /* MurmurViewController.swift */; };
 		ACF2060C1DDAD48C00E9446F /* twitter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ACF2060B1DDAD48C00E9446F /* twitter.jpg */; };
@@ -46,7 +75,46 @@
 			remoteGlobalIDString = AC212E631DD448E1003A400C;
 			remoteInfo = SilentWarmth;
 		};
+		ACCEA6571DFF8A4D006B756E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC212E5C1DD448E1003A400C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACCEA6541DFF8A4D006B756E;
+			remoteInfo = "SilentWarmthWatch Extension";
+		};
+		ACCEA6651DFF8A4D006B756E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC212E5C1DD448E1003A400C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACCEA6481DFF8A4D006B756E;
+			remoteInfo = SilentWarmthWatch;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ACCEA66D1DFF8A4D006B756E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				ACCEA6561DFF8A4D006B756E /* SilentWarmthWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACCEA66F1DFF8A4D006B756E /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				ACCEA6671DFF8A4D006B756E /* SilentWarmthWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0466CA887A54AD37E25FDF7C /* Pods_SilentWarmthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SilentWarmthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,8 +124,12 @@
 		98C045134FEE2B33946A81A1 /* Pods-SilentWarmthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilentWarmthTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SilentWarmthTests/Pods-SilentWarmthTests.release.xcconfig"; sourceTree = "<group>"; };
 		AC0045811DD57028009E135F /* BubbleTransition.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BubbleTransition.framework; path = Carthage/Build/iOS/BubbleTransition.framework; sourceTree = "<group>"; };
 		AC0045841DD58285009E135F /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		AC03E3E71E03AA6300B97C60 /* MurmurSetMessageInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MurmurSetMessageInterfaceController.swift; sourceTree = "<group>"; };
+		AC03E3E91E03AE6500B97C60 /* TableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRowController.swift; sourceTree = "<group>"; };
 		AC0B03481DF52F0C00D7E135 /* alertImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = alertImg.png; path = ../../../../Desktop/icon/alertImg.png; sourceTree = "<group>"; };
 		AC1E6A131DEFE3260059180F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		AC1FD9291E026EC400A88684 /* HelpSetOtherColorInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpSetOtherColorInterfaceController.swift; sourceTree = "<group>"; };
+		AC1FD92B1E02790A00A88684 /* ConfirmationModalInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationModalInterfaceController.swift; sourceTree = "<group>"; };
 		AC212E641DD448E2003A400C /* SilentWarmth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilentWarmth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC212E671DD448E2003A400C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC212E691DD448E2003A400C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,8 +147,36 @@
 		AC2380401DE7E67D0065146A /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		AC2589A41DEBF9480022EB14 /* Values.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
 		AC2589A81DEC03050022EB14 /* NotifyListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyListTableViewCell.swift; sourceTree = "<group>"; };
+		AC3BDF8F1E02602D0032FF08 /* ColorBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorBase.swift; sourceTree = "<group>"; };
+		AC3BDF911E0268050032FF08 /* HelpSetMyColorInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpSetMyColorInterfaceController.swift; sourceTree = "<group>"; };
+		AC4159F31E0384F9000C0DF0 /* InviteSetAttributeInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteSetAttributeInterfaceController.swift; sourceTree = "<group>"; };
+		AC4159F51E038515000C0DF0 /* InviteSetMyColorInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteSetMyColorInterfaceController.swift; sourceTree = "<group>"; };
+		AC4159F71E038539000C0DF0 /* InviteSetIsEdgeInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteSetIsEdgeInterfaceController.swift; sourceTree = "<group>"; };
+		AC4159FB1E03857A000C0DF0 /* MurMurSetMyColorInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MurMurSetMyColorInterfaceController.swift; sourceTree = "<group>"; };
+		AC790F341E0BA978003E83F3 /* SWMatchImgHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SWMatchImgHand.png; path = ../../../../Desktop/icon/SWMatchImgHand.png; sourceTree = "<group>"; };
+		AC790F351E0BA978003E83F3 /* SWMatchImgHeart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SWMatchImgHeart.png; path = ../../../../Desktop/icon/SWMatchImgHeart.png; sourceTree = "<group>"; };
+		AC790F381E0BAA08003E83F3 /* MatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
+		AC790F3A1E0BB2EF003E83F3 /* SWMatchImgBoth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SWMatchImgBoth.png; path = ../../../../Desktop/icon/SWMatchImgBoth.png; sourceTree = "<group>"; };
 		AC891F521DE6B4F80006EE82 /* Uuids.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uuids.swift; sourceTree = "<group>"; };
+		AC9ECB5B1E249AF900EF06AF /* no_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = no_sound.wav; path = ../../../../Downloads/no_sound.wav; sourceTree = "<group>"; };
 		ACC628C11DDD6B89002E85BE /* AlertBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertBase.swift; sourceTree = "<group>"; };
+		ACC740CC1E2C6B5000B7281D /* SWMatchImgMessage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SWMatchImgMessage.png; path = ../../../../Desktop/icon/SWMatchImgMessage.png; sourceTree = "<group>"; };
+		ACC740CE1E2C726D00B7281D /* MatchDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MatchDetailViewController.swift; path = ../MatchDetailViewController.swift; sourceTree = "<group>"; };
+		ACC740D41E2C94C400B7281D /* SWImgBell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SWImgBell.png; path = ../../../../Desktop/icon/SWImgBell.png; sourceTree = "<group>"; };
+		ACCEA6491DFF8A4D006B756E /* SilentWarmthWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilentWarmthWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACCEA64C1DFF8A4D006B756E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		ACCEA64E1DFF8A4D006B756E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ACCEA6501DFF8A4D006B756E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACCEA6551DFF8A4D006B756E /* SilentWarmthWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SilentWarmthWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACCEA65B1DFF8A4D006B756E /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		ACCEA65C1DFF8A4D006B756E /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		ACCEA65E1DFF8A4D006B756E /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		ACCEA6601DFF8A4D006B756E /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		ACCEA6621DFF8A4D006B756E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ACCEA6641DFF8A4D006B756E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACCEA6701DFF9E64006B756E /* SetTargetInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTargetInterfaceController.swift; sourceTree = "<group>"; };
+		ACCEA6721DFFB1C0006B756E /* Values.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
+		ACCEA6741DFFB729006B756E /* SetMycolorInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetMycolorInterfaceController.swift; sourceTree = "<group>"; };
 		ACD199011DD97DEA009AC564 /* InviteWarmthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteWarmthViewController.swift; sourceTree = "<group>"; };
 		ACD199031DD97E0B009AC564 /* MurmurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MurmurViewController.swift; sourceTree = "<group>"; };
 		ACF2060B1DDAD48C00E9446F /* twitter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = twitter.jpg; path = ../../../../Downloads/twitter.jpg; sourceTree = "<group>"; };
@@ -109,6 +209,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				16CB273F2D1EE96FA8AD129C /* Pods_SilentWarmthUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACCEA6521DFF8A4D006B756E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +253,8 @@
 				AC212E661DD448E2003A400C /* SilentWarmth */,
 				AC212E7B1DD448E2003A400C /* SilentWarmthTests */,
 				AC212E861DD448E2003A400C /* SilentWarmthUITests */,
+				ACCEA64A1DFF8A4D006B756E /* SilentWarmthWatch */,
+				ACCEA6591DFF8A4D006B756E /* SilentWarmthWatch Extension */,
 				AC212E651DD448E2003A400C /* Products */,
 				AC0045801DD57028009E135F /* Frameworks */,
 				528E8D806AC6908B6053948A /* Pods */,
@@ -158,6 +267,8 @@
 				AC212E641DD448E2003A400C /* SilentWarmth.app */,
 				AC212E781DD448E2003A400C /* SilentWarmthTests.xctest */,
 				AC212E831DD448E2003A400C /* SilentWarmthUITests.xctest */,
+				ACCEA6491DFF8A4D006B756E /* SilentWarmthWatch.app */,
+				ACCEA6551DFF8A4D006B756E /* SilentWarmthWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,6 +276,12 @@
 		AC212E661DD448E2003A400C /* SilentWarmth */ = {
 			isa = PBXGroup;
 			children = (
+				ACC740D41E2C94C400B7281D /* SWImgBell.png */,
+				ACC740CC1E2C6B5000B7281D /* SWMatchImgMessage.png */,
+				AC9ECB5B1E249AF900EF06AF /* no_sound.wav */,
+				AC790F3A1E0BB2EF003E83F3 /* SWMatchImgBoth.png */,
+				AC790F341E0BA978003E83F3 /* SWMatchImgHand.png */,
+				AC790F351E0BA978003E83F3 /* SWMatchImgHeart.png */,
 				AC0B03481DF52F0C00D7E135 /* alertImg.png */,
 				ACF2060B1DDAD48C00E9446F /* twitter.jpg */,
 				AC212E671DD448E2003A400C /* AppDelegate.swift */,
@@ -182,6 +299,8 @@
 				AC2380401DE7E67D0065146A /* TestViewController.swift */,
 				AC2589A41DEBF9480022EB14 /* Values.swift */,
 				AC2589A81DEC03050022EB14 /* NotifyListTableViewCell.swift */,
+				AC790F381E0BAA08003E83F3 /* MatchViewController.swift */,
+				ACC740CE1E2C726D00B7281D /* MatchDetailViewController.swift */,
 			);
 			path = SilentWarmth;
 			sourceTree = "<group>";
@@ -204,6 +323,50 @@
 			path = SilentWarmthUITests;
 			sourceTree = "<group>";
 		};
+		ACCEA64A1DFF8A4D006B756E /* SilentWarmthWatch */ = {
+			isa = PBXGroup;
+			children = (
+				ACCEA64B1DFF8A4D006B756E /* Interface.storyboard */,
+				ACCEA64E1DFF8A4D006B756E /* Assets.xcassets */,
+				ACCEA6501DFF8A4D006B756E /* Info.plist */,
+			);
+			path = SilentWarmthWatch;
+			sourceTree = "<group>";
+		};
+		ACCEA6591DFF8A4D006B756E /* SilentWarmthWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ACCEA65C1DFF8A4D006B756E /* InterfaceController.swift */,
+				ACCEA65E1DFF8A4D006B756E /* ExtensionDelegate.swift */,
+				ACCEA6601DFF8A4D006B756E /* NotificationController.swift */,
+				ACCEA6621DFF8A4D006B756E /* Assets.xcassets */,
+				AC1FD9291E026EC400A88684 /* HelpSetOtherColorInterfaceController.swift */,
+				ACCEA6641DFF8A4D006B756E /* Info.plist */,
+				ACCEA6701DFF9E64006B756E /* SetTargetInterfaceController.swift */,
+				ACCEA6721DFFB1C0006B756E /* Values.swift */,
+				ACCEA6741DFFB729006B756E /* SetMycolorInterfaceController.swift */,
+				AC3BDF8F1E02602D0032FF08 /* ColorBase.swift */,
+				AC3BDF911E0268050032FF08 /* HelpSetMyColorInterfaceController.swift */,
+				AC1FD92B1E02790A00A88684 /* ConfirmationModalInterfaceController.swift */,
+				AC4159F31E0384F9000C0DF0 /* InviteSetAttributeInterfaceController.swift */,
+				AC4159F51E038515000C0DF0 /* InviteSetMyColorInterfaceController.swift */,
+				AC4159F71E038539000C0DF0 /* InviteSetIsEdgeInterfaceController.swift */,
+				AC4159FB1E03857A000C0DF0 /* MurMurSetMyColorInterfaceController.swift */,
+				ACCEA65A1DFF8A4D006B756E /* Supporting Files */,
+				AC03E3E71E03AA6300B97C60 /* MurmurSetMessageInterfaceController.swift */,
+				AC03E3E91E03AE6500B97C60 /* TableRowController.swift */,
+			);
+			path = "SilentWarmthWatch Extension";
+			sourceTree = "<group>";
+		};
+		ACCEA65A1DFF8A4D006B756E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ACCEA65B1DFF8A4D006B756E /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -218,10 +381,12 @@
 				AC0045831DD57039009E135F /* ShellScript */,
 				4A565AF1A38417306C71B2E0 /* [CP] Embed Pods Frameworks */,
 				0F574F3CABA80429726C7625 /* [CP] Copy Pods Resources */,
+				ACCEA66F1DFF8A4D006B756E /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				ACCEA6661DFF8A4D006B756E /* PBXTargetDependency */,
 			);
 			name = SilentWarmth;
 			productName = SilentWarmth;
@@ -270,6 +435,40 @@
 			productReference = AC212E831DD448E2003A400C /* SilentWarmthUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		ACCEA6481DFF8A4D006B756E /* SilentWarmthWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACCEA66E1DFF8A4D006B756E /* Build configuration list for PBXNativeTarget "SilentWarmthWatch" */;
+			buildPhases = (
+				ACCEA6471DFF8A4D006B756E /* Resources */,
+				ACCEA66D1DFF8A4D006B756E /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ACCEA6581DFF8A4D006B756E /* PBXTargetDependency */,
+			);
+			name = SilentWarmthWatch;
+			productName = SilentWarmthWatch;
+			productReference = ACCEA6491DFF8A4D006B756E /* SilentWarmthWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		ACCEA6541DFF8A4D006B756E /* SilentWarmthWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACCEA66C1DFF8A4D006B756E /* Build configuration list for PBXNativeTarget "SilentWarmthWatch Extension" */;
+			buildPhases = (
+				ACCEA6511DFF8A4D006B756E /* Sources */,
+				ACCEA6521DFF8A4D006B756E /* Frameworks */,
+				ACCEA6531DFF8A4D006B756E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SilentWarmthWatch Extension";
+			productName = "SilentWarmthWatch Extension";
+			productReference = ACCEA6551DFF8A4D006B756E /* SilentWarmthWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -302,6 +501,21 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = AC212E631DD448E1003A400C;
 					};
+					ACCEA6481DFF8A4D006B756E = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 3457D6786D;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes.watchos.app = {
+								enabled = 1;
+							};
+						};
+					};
+					ACCEA6541DFF8A4D006B756E = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 3457D6786D;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = AC212E5F1DD448E1003A400C /* Build configuration list for PBXProject "SilentWarmth" */;
@@ -320,6 +534,8 @@
 				AC212E631DD448E1003A400C /* SilentWarmth */,
 				AC212E771DD448E2003A400C /* SilentWarmthTests */,
 				AC212E821DD448E2003A400C /* SilentWarmthUITests */,
+				ACCEA6481DFF8A4D006B756E /* SilentWarmthWatch */,
+				ACCEA6541DFF8A4D006B756E /* SilentWarmthWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -329,11 +545,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACC740D51E2C94C400B7281D /* SWImgBell.png in Resources */,
+				AC9ECB5C1E249AF900EF06AF /* no_sound.wav in Resources */,
 				AC212E721DD448E2003A400C /* LaunchScreen.storyboard in Resources */,
 				AC0B03491DF52F0C00D7E135 /* alertImg.png in Resources */,
+				AC790F361E0BA978003E83F3 /* SWMatchImgHand.png in Resources */,
 				ACF2060C1DDAD48C00E9446F /* twitter.jpg in Resources */,
+				ACC740CD1E2C6B5000B7281D /* SWMatchImgMessage.png in Resources */,
 				AC212E6F1DD448E2003A400C /* Assets.xcassets in Resources */,
 				AC212E6D1DD448E2003A400C /* Main.storyboard in Resources */,
+				AC790F3B1E0BB2EF003E83F3 /* SWMatchImgBoth.png in Resources */,
+				AC790F371E0BA978003E83F3 /* SWMatchImgHeart.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +570,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACCEA6471DFF8A4D006B756E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACCEA64F1DFF8A4D006B756E /* Assets.xcassets in Resources */,
+				ACCEA64D1DFF8A4D006B756E /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACCEA6531DFF8A4D006B756E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACCEA6631DFF8A4D006B756E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,12 +749,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC790F391E0BAA08003E83F3 /* MatchViewController.swift in Sources */,
 				AC891F531DE6B4F80006EE82 /* Uuids.swift in Sources */,
 				ACD199021DD97DEA009AC564 /* InviteWarmthViewController.swift in Sources */,
 				AC212E961DD44D15003A400C /* SendWarmthViewController.swift in Sources */,
 				AC2589A91DEC03050022EB14 /* NotifyListTableViewCell.swift in Sources */,
 				AC212E6A1DD448E2003A400C /* ViewController.swift in Sources */,
 				ACD199041DD97E0B009AC564 /* MurmurViewController.swift in Sources */,
+				ACC740CF1E2C726D00B7281D /* MatchDetailViewController.swift in Sources */,
 				ACC628C21DDD6B89002E85BE /* AlertBase.swift in Sources */,
 				AC212E681DD448E2003A400C /* AppDelegate.swift in Sources */,
 				AC2589A51DEBF9480022EB14 /* Values.swift in Sources */,
@@ -540,6 +781,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ACCEA6511DFF8A4D006B756E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACCEA6611DFF8A4D006B756E /* NotificationController.swift in Sources */,
+				AC1FD92A1E026EC400A88684 /* HelpSetOtherColorInterfaceController.swift in Sources */,
+				AC3BDF921E0268050032FF08 /* HelpSetMyColorInterfaceController.swift in Sources */,
+				ACCEA6711DFF9E64006B756E /* SetTargetInterfaceController.swift in Sources */,
+				AC1FD92C1E02790A00A88684 /* ConfirmationModalInterfaceController.swift in Sources */,
+				AC4159F61E038515000C0DF0 /* InviteSetMyColorInterfaceController.swift in Sources */,
+				ACCEA6751DFFB729006B756E /* SetMycolorInterfaceController.swift in Sources */,
+				AC03E3EA1E03AE6500B97C60 /* TableRowController.swift in Sources */,
+				ACCEA6731DFFB1C0006B756E /* Values.swift in Sources */,
+				AC4159FC1E03857A000C0DF0 /* MurMurSetMyColorInterfaceController.swift in Sources */,
+				AC3BDF901E02602D0032FF08 /* ColorBase.swift in Sources */,
+				ACCEA65F1DFF8A4D006B756E /* ExtensionDelegate.swift in Sources */,
+				AC4159F41E0384F9000C0DF0 /* InviteSetAttributeInterfaceController.swift in Sources */,
+				AC4159F81E038539000C0DF0 /* InviteSetIsEdgeInterfaceController.swift in Sources */,
+				AC03E3E81E03AA6300B97C60 /* MurmurSetMessageInterfaceController.swift in Sources */,
+				ACCEA65D1DFF8A4D006B756E /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -552,6 +816,16 @@
 			isa = PBXTargetDependency;
 			target = AC212E631DD448E1003A400C /* SilentWarmth */;
 			targetProxy = AC212E841DD448E2003A400C /* PBXContainerItemProxy */;
+		};
+		ACCEA6581DFF8A4D006B756E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACCEA6541DFF8A4D006B756E /* SilentWarmthWatch Extension */;
+			targetProxy = ACCEA6571DFF8A4D006B756E /* PBXContainerItemProxy */;
+		};
+		ACCEA6661DFF8A4D006B756E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACCEA6481DFF8A4D006B756E /* SilentWarmthWatch */;
+			targetProxy = ACCEA6651DFF8A4D006B756E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -570,6 +844,14 @@
 				AC212E711DD448E2003A400C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		ACCEA64B1DFF8A4D006B756E /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACCEA64C1DFF8A4D006B756E /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -684,6 +966,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.cafeblog.chocoffee.SilentWarmth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -703,6 +986,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.cafeblog.chocoffee.SilentWarmth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -768,6 +1052,76 @@
 			};
 			name = Release;
 		};
+		ACCEA6681DFF8A4D006B756E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3457D6786D;
+				IBSC_MODULE = SilentWarmthWatch_Extension;
+				INFOPLIST_FILE = SilentWarmthWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.cafeblog.chocoffee.SilentWarmth.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		ACCEA6691DFF8A4D006B756E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3457D6786D;
+				IBSC_MODULE = SilentWarmthWatch_Extension;
+				INFOPLIST_FILE = SilentWarmthWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.cafeblog.chocoffee.SilentWarmth.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
+		ACCEA66A1DFF8A4D006B756E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = 3457D6786D;
+				INFOPLIST_FILE = "SilentWarmthWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.cafeblog.chocoffee.SilentWarmth.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		ACCEA66B1DFF8A4D006B756E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = 3457D6786D;
+				INFOPLIST_FILE = "SilentWarmthWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.cafeblog.chocoffee.SilentWarmth.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -803,6 +1157,24 @@
 			buildConfigurations = (
 				AC212E931DD448E2003A400C /* Debug */,
 				AC212E941DD448E2003A400C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACCEA66C1DFF8A4D006B756E /* Build configuration list for PBXNativeTarget "SilentWarmthWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACCEA66A1DFF8A4D006B756E /* Debug */,
+				ACCEA66B1DFF8A4D006B756E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACCEA66E1DFF8A4D006B756E /* Build configuration list for PBXNativeTarget "SilentWarmthWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACCEA6681DFF8A4D006B756E /* Debug */,
+				ACCEA6691DFF8A4D006B756E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
