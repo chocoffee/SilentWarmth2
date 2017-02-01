@@ -11,45 +11,17 @@ import Foundation
 import WatchConnectivity
 
 
-class ConfirmationModalInterfaceController: WKInterfaceController, WCSessionDelegate {
+class ConfirmationModalInterfaceController: BaseInterfaceController {
 
     @IBOutlet var typeLabel: WKInterfaceLabel!
     @IBOutlet var detailLabel: WKInterfaceLabel!
     
-    var data = [String : Any]()
     var str = ""
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         detailLabel.sizeToFitHeight()
-        data = (context as? [String : Any])!
         setLabels(data: data)
-        if (WCSession.isSupported()) {
-            let session = WCSession.default()
-            session.delegate = self
-            session.activate()
-        }
-        // Configure interface objects here.
-    }
-
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-    }
-    @IBAction func startAdvertise() {
-        print("data set done")
-        do {
-            let message:[String: Any] = data
-            print("data = \(message)")
-            try WCSession.default().updateApplicationContext(message)
-        }catch {
-            print("update application context error")
-        }
     }
     
     func setLabels(data: [String : Any]){
@@ -79,11 +51,13 @@ class ConfirmationModalInterfaceController: WKInterfaceController, WCSessionDele
         }
     }
     
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        print("hi")
+    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
+        setBackData()
+        
+        return data
     }
     
-    
-    
-    
+    override func backToRoot() {
+        dismiss()
+    }
 }

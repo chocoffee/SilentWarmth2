@@ -7,18 +7,29 @@
 //
 
 import UIKit
+import CoreBluetooth
 
-class MatchViewController: UIViewController {
+
+class MatchViewController: UIViewController, CBPeripheralDelegate, CBPeripheralManagerDelegate {
     var data = [String : Any]()
     var from = -1   // -1ならNotificationから、1なら発信時
     var isHeart = false
+    var back:BackViewControllerDelegate?
+    var peripheral: CBPeripheral!
+    var peripheralManager: CBPeripheralManager!
+    var characteristic: CBMutableCharacteristic!
+    var vc: ViewControllerChangedDelegate?
 
     @IBOutlet weak var matchImage: UIImageView!
+    @IBOutlet weak var helpLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
+        peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
         messageLabel.sizeToFit()
+        helpLabel.isHidden = true
         
         var inviteStr = ""
         var sendStr = ""
@@ -68,8 +79,11 @@ class MatchViewController: UIViewController {
         default:
             self.view.backgroundColor = UIColor.black
             matchImage.image = UIImage(named: "SWMatchImgBoth")
+            helpLabel.isHidden = false
+            helpLabel.textColor = UIColor.white
+            helpLabel.text = "HELP"
             messageLabel.textColor = UIColor.white
-            messageLabel.text = "落ち着いて助けを待ってください。\n画面を他の人に見えやすい位置に置いてください。"
+            messageLabel.text = "画面を他の人に見えやすい位置に置いてください。"
         }
         // Do any additional setup after loading the view.
     }
@@ -84,10 +98,12 @@ class MatchViewController: UIViewController {
         if from == 1 {
             _ = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: false)
         }
+        advertise()
     }
     
     func updateCounter() {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
+        back?.backViewController()
     }
     
     func heartExpansion() {
@@ -124,10 +140,55 @@ class MatchViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func dismiss(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-
+    
+    func advertise() {
+        data["uuid"] = UUID().uuidString
+        guard let json = try? JSONSerialization.data(withJSONObject: data, options: .init(rawValue: 0)) else{
+            return
+        }
+        let serviceUUID = CBUUID(string: Uuids.serviceUUID)
+        let service = CBMutableService(type: serviceUUID, primary: true)
+        let charactericUUID = CBUUID(string: Uuids.characteristicUUID)
+        characteristic = CBMutableCharacteristic(type: charactericUUID, properties: CBCharacteristicProperties.read, value: json, permissions: CBAttributePermissions.readable)
+        service.characteristics = [characteristic]
+        self.peripheralManager.add(service)
+        vc?.changedEvent(data)
+        let advertisementData = [CBAdvertisementDataServiceUUIDsKey:[service.uuid]] as [String : Any]
+        
+        peripheralManager.startAdvertising(advertisementData)
+        _ = Timer.scheduledTimer(timeInterval: 180.0, target: self, selector: #selector(stopAdvertise), userInfo: nil, repeats: false)
+    }
+    
+    func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
+        print("peripheralState: \(peripheral.state)")
+    }
+    
+    //  service add result
+    func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {
+        if error != nil {
+            print("service add failed...")
+            return
+        }
+        print("service add success!")
+    }
+    
+    //  advertise result
+    func peripheralManagerDidStartAdvertising(_ peripheral: CBPeripheralManager, error: Error?) {
+        if error != nil {
+            print("advertising error...")
+            return
+        }
+        vc?.changedEvent(data)
+        print("advertising success!")
+    }
+    
+    func stopAdvertise() {
+        vc?.stopAd()
+        print("advertise stopped@help")
+    }
 }

@@ -9,18 +9,14 @@
 import WatchKit
 import Foundation
 
-
-class InviteSetAttributeInterfaceController: WKInterfaceController {
+class InviteSetAttributeInterfaceController: BaseInterfaceController {
     @IBOutlet var picker: WKInterfacePicker!
 
     var attribute = "お年寄り"
-    var data = [String : Any]()
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         setPicker()
-        
-        // Configure interface objects here.
     }
 
     func setPicker() {
@@ -33,13 +29,6 @@ class InviteSetAttributeInterfaceController: WKInterfaceController {
         picker.setItems(pickerItems)
     }
     
-    override func willActivate() {
-        super.willActivate()
-    }
-
-    override func didDeactivate() {
-        super.didDeactivate()
-    }
     @IBAction func pickerChanged(_ value: Int) {
         attribute = Values.attribute[value]
     }
@@ -49,5 +38,4 @@ class InviteSetAttributeInterfaceController: WKInterfaceController {
         data["type"] = "invite"
         return data
     }
-
 }

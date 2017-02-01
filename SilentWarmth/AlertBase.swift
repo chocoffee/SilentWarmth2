@@ -29,6 +29,5 @@ class AleatBase : SCLAlertView{
             print("custom button")
         }
         _ = alert.showCustom(title, subTitle: subTitle, color: UIColor.red, icon: icon!)
-        
     }
 }

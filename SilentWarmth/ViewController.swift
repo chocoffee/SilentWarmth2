@@ -9,34 +9,40 @@
 import UIKit
 import BubbleTransition
 import CoreBluetooth
-import SwiftyJSON
 import WatchConnectivity
-import AVFoundation
+import UserNotifications
 
-protocol ViewControllerDelegate {
+protocol ViewControllerChangedDelegate {
     func changedEvent(_ data: [String : Any])
+    func stopAd()
 }
 
+protocol BackViewControllerDelegate {
+    var vc:ViewControllerChangedDelegate?{
+        get set
+    }
+    func backViewController()
+}
 
-class ViewController: UIViewController, UIViewControllerTransitioningDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, UIPopoverPresentationControllerDelegate, CBPeripheralManagerDelegate, ViewControllerDelegate, WCSessionDelegate, AVAudioPlayerDelegate {
+class ViewController: UIViewController, UIViewControllerTransitioningDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, UIPopoverPresentationControllerDelegate, CBPeripheralManagerDelegate, ViewControllerChangedDelegate, WCSessionDelegate, UNUserNotificationCenterDelegate {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var transitionButton: UIButton!
     @IBOutlet weak var notifyButton: UIButton!
+    @IBOutlet weak var bStopScan: UIButton!
     
     var centralManager: CBCentralManager!
     var discoverPeripheral: CBPeripheral!
     var serviceUUID:[CBUUID] = []
     var ary = [[String : Any]]()
     var data = [String : Any]()
+    let alert = AleatBase()
     
     var peripheral: CBPeripheral!
     var peripheralManager: CBPeripheralManager!
     var characteristic: CBMutableCharacteristic!
-    
-    var player: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,35 +63,18 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, C
         }
         _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: false)
         _ = Timer.scheduledTimer(timeInterval: 1800.0, target: self, selector: #selector(stopScan), userInfo: nil, repeats: false)
-        // Do any additional setup after loading the view, typically from a nib.
         
-        let soundFilePath : String = Bundle.main.path(forResource: "no_sound", ofType: "wav")!
-        let fileURL : URL = URL(fileURLWithPath: soundFilePath)
-        do{
-            player = try AVAudioPlayer(contentsOf: fileURL)
-            player.delegate = self
-            player.numberOfLoops = -1
-        }
-        catch{
-            print(error)
-        }
-        _ = try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+        bStopScan.isHidden = true
         
-        let session = AVAudioSession.sharedInstance()
-        do {
-            try session.setCategory(AVAudioSessionCategoryPlayback)
-        } catch  {
-            fatalError("カテゴリ設定失敗")
+        let ud = UserDefaults.standard
+        if ud.bool(forKey: "firstLaunch") {
+            presentAnnotation()
+            ud.set(false, forKey: "firstLaunch")
         }
-        
-        do {
-            try session.setActive(true)
-        } catch {
-            fatalError("session有効化失敗")
-        }
-        
-        player.play()
-        print("music play")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {
@@ -96,22 +85,14 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, C
     let transition = BubbleTransition()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? SendWarmthViewController {
-            vc.vc = self
-            return
-        }else if let vc = segue.destination as? InviteWarmthViewController {
-            vc.vc = self
-            return
-        }else if let vc = segue.destination as? MurmurViewController {
-            vc.vc = self
-            return
-        }
-        
         let controller = segue.destination
-        controller.transitioningDelegate = self
-        controller.modalPresentationStyle = .custom
-        
-        
+        if var vc = controller as? BackViewControllerDelegate {
+            vc.vc = self
+        }
+        if controller is HelpViewController {
+            controller.transitioningDelegate = self
+            controller.modalPresentationStyle = .custom
+        }
     }
     
     // MARK: UIViewControllerTransitioningDelegate
@@ -134,7 +115,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, C
     }
 
     func startScan() {
-        centralManager.scanForPeripherals(withServices: serviceUUID, options: [CBCentralManagerScanOptionAllowDuplicatesKey : false])
+        centralManager.scanForPeripherals(withServices: serviceUUID, options: [CBCentralManagerScanOptionAllowDuplicatesKey : false])   //  同一端末からのアレ無し？
         print("scan start")
     }
     
@@ -185,19 +166,32 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, C
             print("let's reading")
             if let tmpJSON = try? JSONSerialization.jsonObject(with: value, options: .mutableContainers){
                 if let json = tmpJSON as? [String:Any]{
-                    ary.append(json)
-                    print(json)
+                    let uuid = json["uuid"] as? String ?? ""
+                    let bool = ary.contains{ v in
+                        if let str = v["uuid"] as? String {
+                            if str == uuid {
+                                return true
+                            }
+                        }
+                        return false
+                    }
+                    if !bool {
+                        ary.append(json)
+                        setPush(data: json)
+                        do {
+                            let sendData:[String: Any] = json
+                            print("data = \(sendData)")
+                            try WCSession.default().transferUserInfo(sendData)
+                        } catch {
+                            print("update application  error")
+                        }
+                        print(json)
+                    }
                 }
             }else{
                 print("json decode")
             }
-        
-            if let string = String(data: value, encoding: .utf8){
-                print(string)
-            }else{
-                print("string decode")
-            }
-        
+            
             print("読み出し成功！service UUID = \(characteristic.service.uuid), characteristic UUID = \(characteristic.uuid), value = \(characteristic.value!)")
         }
     }
@@ -230,7 +224,6 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, C
         //set delegate
         contentVC.popoverPresentationController?.delegate = self
         contentVC.ary = ary
-        //contentVC.nowAry = advertising
         //present
         present(contentVC, animated: true, completion: nil)
     }
@@ -249,7 +242,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, C
                 case "send":
                 typeLabel.text = "ゆずります"
                 if let target = data["target"] as? [String] {
-                    str.append("\(target.joined(separator: ","))")
+                    str.append("\(target.joined(separator: " "))")
                 }
                 detailLabel.text = "ゆずる人：\n\(str)\n服の色：\(data["myColor"]!)"
             case "invite" :
@@ -261,22 +254,24 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, C
             case "murmur":
                 typeLabel.text = "メッセージを送信する"
                 detailLabel.text = "メッセージ：\(data["message"]!)\n服の色：\(data["myColor"]!)"
+            case "help":
+                typeLabel.text = "助けてください"
+                detailLabel.text = "あなたの服の色：\(data["myColor"]!)\n相手の服の色：\(data["oColor"]!)"
             default:
                 break
             }
+            self.bStopScan.setTitle("発信を中止する", for: .normal)
+            self.bStopScan.isHidden = false
         }
-    }
-    
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-        print("message ::: \(message)")
-        data = message
-        advertise()
     }
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         print("application context:::\(applicationContext)")
         data = applicationContext
-        advertise()
+        stopAd()
+        if (data["stop"] == nil) {
+            advertise()
+        }
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
@@ -299,6 +294,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, C
     }
     
     func advertise() {
+        data["uuid"] = UUID().uuidString
         guard let json = try? JSONSerialization.data(withJSONObject: data, options: .init(rawValue: 0)) else{
             return
         }
@@ -326,10 +322,12 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, C
     //  advertise result
     func peripheralManagerDidStartAdvertising(_ peripheral: CBPeripheralManager, error: Error?) {
         if error != nil {
-            print("advertising error...")
+            print("advertising error...\(error)")
+            self.detailLabel.text = "他のデータを発信中のため、\nこのデータを発信できません。"
             return
         }
         print("advertising success!")
+        changedEvent(data)
     }
     
     func stopAdvertise() {
@@ -337,5 +335,71 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, C
         print("advertise stopped")
     }
 
+    @IBAction func bStopScanTapped(_ sender: UIButton) {
+        alert.alert("中止する", btn2: "キャンセル", title: "確認", subTitle: "発信を中止してよろしいですか？", advertise: stopAd)
+    }
+    
+    func stopAd() {
+        self.peripheralManager.stopAdvertising()
+        self.titleLabel.text = ""
+        self.detailLabel.text = ""
+        self.typeLabel.text = ""
+        self.bStopScan.isHidden = true
+        print("advertise stopped")
+    }
+    
+    func setPush(data: [String : Any]) {
+        let type = data["type"]
+        var str = ""
+        
+        var title = ""
+        var body = ""
+        
+        switch type as! String {
+        case "send":
+            title = "ゆずります"
+            if let target = data["target"] as? [String] {
+                body = "\(target.joined(separator: ","))にゆずります！服は\(data["myColor"] ?? "")です。"
+            }
+        case "invite":
+            title = "席を探しています"
+            if data["isEdge"] as! Bool{
+                str = "端の席を希望します。"
+            }
+            body = "私は\(data["attribute"] ?? "")、服は\(data["myColor"] ?? "")です。\(str)"
+        case "murmur":
+            title = "メッセージを受信しました"
+            body = "\(data["myColor"] ?? "")の服の人が「\(data["message"] ?? "")」と言っています。"
+        case "help":
+            title = "助けてください"
+            body = "\(data["oColor"] ?? "")色の服の人に痴漢されています。私は\(data["myColor"] ?? "")色です。"
+        default:
+            break
+        }
+        
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.subtitle = "Subtitle"
+        content.body = body
+        content.sound = UNNotificationSound.default()
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
+        let request = UNNotificationRequest(identifier: "notify",
+                                            content: content,
+                                            trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
+    func presentAnnotation() {
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Annotation") as! AnnotationViewController
+        viewController.alpha = 0.5
+        viewController.barHeight = navigationController?.navigationBar.frame.height ?? 0
+        present(viewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func onTapTutorial(_ sender: UIButton) {
+        presentAnnotation()
+    }
 }
 

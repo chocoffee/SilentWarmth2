@@ -42,24 +42,20 @@ class TestViewController: UIViewController, UITableViewDelegate, UITableViewData
         case "send":
             cell.titleLabel.text = "ゆずります"
             if let target = tmp["target"] as? [String] {
-                cell.strLabel.text = "\(target.joined(separator: ","))にゆずります！服は\(tmp["myColor"] ?? "")です。"
+                cell.strLabel.text = "\(target.joined(separator: " "))にゆずります！服は\(tmp["myColor"] ?? "")です。"
             }
-            break
         case "invite":
             cell.titleLabel.text = "席を探しています"
             if tmp["isEdge"] as! Bool{
                 str = "端の席を希望します。"
             }
             cell.strLabel.text = "私は\(tmp["attribute"] ?? "")、服は\(tmp["myColor"] ?? "")です。\(str)"
-            break
         case "murmur":
             cell.titleLabel.text = "メッセージを受信しました"
             cell.strLabel.text = "\(tmp["myColor"] ?? "")の服の人が「\(tmp["message"] ?? "")」と言っています。"
-            break
         case "help":
             cell.titleLabel.text = "助けてください"
             cell.strLabel.text = "\(tmp["oColor"] ?? "")色の服の人に痴漢されています。私は\(tmp["myColor"] ?? "")色です。"
-            break
         default:
             break
         }
@@ -73,16 +69,4 @@ class TestViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

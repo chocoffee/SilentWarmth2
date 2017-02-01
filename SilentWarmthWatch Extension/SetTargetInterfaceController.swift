@@ -10,24 +10,11 @@ import WatchKit
 import Foundation
 
 
-class SetTargetInterfaceController: WKInterfaceController {
+class SetTargetInterfaceController: BaseInterfaceController {
     var switches = [false, false, false, false, false]
-    var data = [String : Any]()
-
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        // Configure interface objects here.
-    }
-
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
     }
 
     @IBAction func elderlyChanged(_ value: Bool) {
@@ -75,12 +62,15 @@ class SetTargetInterfaceController: WKInterfaceController {
                 ary.append(Values.attribute[i])
             }
         }
-        data["target"] = ary
-        data["type"] = "send"
-        print("targetVC\(ary)")
-    
-        return data
+        
+        if ary == [] {
+            let buttonAction = WKAlertAction(title:"OK", style: .default) {}
+            presentAlert(withTitle: "エラー", message:"ゆずる相手がいません。\nゆずる相手を設定し直してください。", preferredStyle: .alert, actions: [buttonAction])
+        }else {
+            data["target"] = ary
+            data["type"] = "send"
+            return data
+        }
+        return []
     }
- 
-
 }

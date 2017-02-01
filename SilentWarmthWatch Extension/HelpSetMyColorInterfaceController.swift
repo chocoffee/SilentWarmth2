@@ -10,27 +10,15 @@ import WatchKit
 import Foundation
 
 
-class HelpSetMyColorInterfaceController: WKInterfaceController {
+class HelpSetMyColorInterfaceController: BaseInterfaceController {
     @IBOutlet var colorPicker: WKInterfacePicker!
 
     var color = "赤"
-    var data = [String : Any]()
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         data["type"] = "help"
         setPicker()
-        // Configure interface objects here.
-    }
-
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
     }
     
     func setPicker() {
@@ -45,7 +33,6 @@ class HelpSetMyColorInterfaceController: WKInterfaceController {
     
     @IBAction func pickerChanged(_ value: Int) {
         color = Values.color[value]
-        print(color)
     }
     
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {

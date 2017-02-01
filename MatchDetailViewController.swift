@@ -19,16 +19,10 @@ class MatchDetailViewController: UIViewController {
         super.viewDidLoad()
         decode(data: data)
         detailLabel.sizeToFit()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    @IBAction func goToAnimation(_ sender: UIButton) {
-        
     }
     
     @IBAction func dismiss(_ sender: UIButton) {
@@ -65,10 +59,6 @@ class MatchDetailViewController: UIViewController {
         }
     }
 
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? MatchViewController {
             vc.data = data
@@ -80,5 +70,4 @@ class MatchDetailViewController: UIViewController {
             self.startAnimation.isHidden = bool
         }
     }
-
 }

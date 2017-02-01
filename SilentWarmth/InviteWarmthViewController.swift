@@ -7,33 +7,40 @@
 //
 
 import UIKit
-import CoreBluetooth
 
-class InviteWarmthViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, CBPeripheralDelegate, CBPeripheralManagerDelegate {
-    @IBOutlet weak var attributePicker: UIPickerView!
+
+class InviteWarmthViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
     @IBOutlet weak var colorPicker: UIPickerView!
     @IBOutlet weak var isEdge: UISwitch!
-    var data = [String : Any]()
-    let alert = AleatBase()
     
-    var peripheral: CBPeripheral!
-    var peripheralManager: CBPeripheralManager!
-    var characteristic: CBMutableCharacteristic!
-    var vc:ViewControllerDelegate?
+    @IBOutlet weak var bElderly: UIButton!
+    @IBOutlet weak var bInjured: UIButton!
+    @IBOutlet weak var bMatarnity: UIButton!
+    @IBOutlet weak var bLone: UIButton!
+    @IBOutlet weak var bSick: UIButton!
     
+    @IBOutlet weak var backView: UIView!
     
-    
+    var selected = [true, false, false, false, false]
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        attributePicker.delegate = self
-        attributePicker.dataSource = self
+        self.backView.layer.borderColor = #colorLiteral(red: 0.8156862745, green: 0.1374401427, blue: 0.3137254902, alpha: 1).cgColor
+        self.backView.layer.borderWidth = 2
+        self.backView.layer.cornerRadius = 15
+        
         colorPicker.delegate = self
         colorPicker.dataSource = self
         
-        peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
+        self.bElderly.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        self.bInjured.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        self.bMatarnity.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        self.bLone.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        self.bSick.imageView?.contentMode = UIViewContentMode.scaleAspectFit
         
-        self.title = "ゆずってほしい"
+        self.title = "座席を要請する"
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,78 +75,65 @@ class InviteWarmthViewController: UIViewController, UIPickerViewDelegate, UIPick
         data["type"] = "invite"
         var str = ""
         
-        data["attribute"] = Values.attribute[attributePicker.selectedRow(inComponent: 0)]
+        var index = -1
+        for i in 0...4 {
+            if selected[i] {
+                index = i
+            }
+        }
+        
+        data["attribute"] = Values.attribute[index]
         data["myColor"] = Values.color[colorPicker.selectedRow(inComponent: 0)]
         data["isEdge"] = isEdge.isOn
+        print("data@invite\(data)")
         
-        str.append(Values.attribute[attributePicker.selectedRow(inComponent: 0)])
-        str.append("服：\(Values.color[colorPicker.selectedRow(inComponent: 0)])")
+        str.append("あなたは\(Values.attribute[index])\n")
+        str.append("服の色：\(Values.color[colorPicker.selectedRow(inComponent: 0)])")
         if isEdge.isOn {
             str.append("\n端の席を希望する")
         }
         setAlert(str)
     }
     
-    //  あらーと呼び出し
-    func setAlert(_ str: String) {
-        alert.alert("発信する", btn2: "キャンセル", title: "確認", subTitle: str, advertise: advertise)
-    }
-    
-    
-    //  以下CB用メソッド
-    
-    func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
-        print("peripheralState: \(peripheral.state)")
-    }
-    
-    //  アドバタイズするデータ準備
-    func advertise() {
-        guard let json = try? JSONSerialization.data(withJSONObject: data, options: .init(rawValue: 0)) else{
-            return
+    func setSelected() {
+        let buttons = [bElderly, bInjured, bMatarnity, bLone, bSick]
+        let pict: [UIImage] = [UIImage(named:"pictgram_01-x1.png")!, UIImage(named:"pictgram_02-x1.png")!,
+                               UIImage(named:"pictgram_03-x1.png")!, UIImage(named:"pictgram_04-x1.png")!,
+                               UIImage(named:"pictgram_05-x1.png")!]
+        let pictGray: [UIImage] = [UIImage(named:"pictgram_gray_1.png")!, UIImage(named:"pictgram_gray_2.png")!,
+                                   UIImage(named:"pictgram_gray_3.png")!, UIImage(named:"pictgram_gray_4.png")!,
+                                   UIImage(named:"pictgram_gray_5.png")!]
+        for i in 0...4 {
+            if self.selected[i] {
+                buttons[i]?.setImage(pict[i], for: UIControlState.normal)
+            }else {
+                buttons[i]?.setImage(pictGray[i], for: UIControlState.normal)
+            }
         }
-        let serviceUUID = CBUUID(string: Uuids.serviceUUID)
-        let service = CBMutableService(type: serviceUUID, primary: true)
-        let charactericUUID = CBUUID(string: Uuids.characteristicUUID)
-        characteristic = CBMutableCharacteristic(type: charactericUUID, properties: CBCharacteristicProperties.read, value: json, permissions: CBAttributePermissions.readable)
-        service.characteristics = [characteristic]
-        self.peripheralManager.add(service)
-        
-        let advertisementData = [CBAdvertisementDataServiceUUIDsKey:[service.uuid]] as [String : Any]
-        
-        peripheralManager.startAdvertising(advertisementData)
-        _ = Timer.scheduledTimer(timeInterval: 180.0, target: self, selector: #selector(stopAdvertise), userInfo: nil, repeats: false)
-        
-        vc?.changedEvent(data)
-        
-        let nextVC = self.storyboard!.instantiateViewController(withIdentifier: "MatchViewController")
-        if let vc = nextVC as? MatchViewController{
-            vc.data = data
-            vc.from = 1
-        }
-        present(nextVC, animated: true, completion: nil)
-        
     }
     
-    //  service add result
-    func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {
-        if error != nil {
-            print("service add failed...")
-            return
-        }
-        print("service add success!")
+    @IBAction func bElderlyTapped(_ sender: UIButton) {
+        self.selected = [true, false, false, false, false]
+        setSelected()
     }
     
-    //  advertise result
-    func peripheralManagerDidStartAdvertising(_ peripheral: CBPeripheralManager, error: Error?) {
-        if error != nil {
-            print("advertising error...")
-            return
-        }
-        print("advertising success!")
+    @IBAction func bInjuredTapped(_ sender: UIButton) {
+        self.selected = [false, true, false, false, false]
+        setSelected()
     }
     
-    func stopAdvertise() {
-        peripheralManager.stopAdvertising()
-        print("advertise stopped")
+    @IBAction func bMatarnityTapped(_ sender: UIButton) {
+        self.selected = [false, false, true, false, false]
+        setSelected()
+    }
+    
+    @IBAction func bLoneTapped(_ sender: UIButton) {
+        self.selected = [false, false, false, true, false]
+        setSelected()
+    }
+    
+    @IBAction func bSickTapped(_ sender: UIButton) {
+        self.selected = [false, false, false, false, true]
+        setSelected()
     }
 }

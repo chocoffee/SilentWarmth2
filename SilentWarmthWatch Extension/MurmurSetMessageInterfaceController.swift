@@ -9,36 +9,27 @@
 import WatchKit
 import Foundation
 
-class MurmurSetMessageInterfaceController: WKInterfaceController {
+class MurmurSetMessageInterfaceController: BaseInterfaceController {
     @IBOutlet var table: WKInterfaceTable!
-    let messages = ["子供が泣いて\nごめんなさい", "寝てしまって\nごめんなさい", "荷物が多くて\nごめんなさい"]
     var message = "子供が泣いてごめんなさい"
-    var data = [String : Any]()
-
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        table.setNumberOfRows(messages.count, withRowType: "tableRow")
-        for i in 0...2{
+        table.setNumberOfRows(Values.message.count, withRowType: "tableRow")
+        for i in 0 ..< Values.message.count{
             let controller = table.rowController(at: i) as! TableRowController
-            controller.messageLabel.setText(messages[i])
-            message = Values.message[i]
+            controller.messageLabel.setText(Values.message[i])
         }
     }
     
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
+    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+       
     }
     
     override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
         data["type"] = "murmur"
-        data["message"] = message
+        data["message"] = Values.message[rowIndex]
         return data
     }
 }
