@@ -7,22 +7,13 @@
 //
 
 import UIKit
-import CoreBluetooth
 
-class MurmurViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, CBPeripheralDelegate, CBPeripheralManagerDelegate {
+class MurmurViewController: BaseViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var messagePicker: UIPickerView!
     @IBOutlet weak var colorPicker: UIPickerView!
     
-    let alert = AleatBase()
     var advertiseData = [[]]
-    var data = [String : Any]()
-    
-    var peripheral: CBPeripheral!
-    var peripheralManager: CBPeripheralManager!
-    var characteristic: CBMutableCharacteristic!
-    
-    var vc:ViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +23,6 @@ class MurmurViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         colorPicker.delegate = self
         colorPicker.dataSource = self
         self.title = "周囲に発信する"
-        peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,63 +57,7 @@ class MurmurViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         let colorIndex = colorPicker.selectedRow(inComponent: 0)
         var str = ""
         self.advertiseData = [[2], [messageIndex], [colorIndex]]
-        str.append("\(Values.message[messageIndex]),\n服：\(Values.color[colorIndex])")
-        
+        str.append("\(Values.message[messageIndex]),\n服の色：\(Values.color[colorIndex])")
         setAlert(str)
-    }
-    
-    func setAlert(_ str: String) {
-        alert.alert("発信する！", btn2: "キャンセル", title: "確認", subTitle: str, advertise: advertise)
-    }
-
-    func advertise() {
-        guard let json = try? JSONSerialization.data(withJSONObject: data, options: .init(rawValue: 0)) else{
-            return
-        }
-        let serviceUUID = CBUUID(string: Uuids.serviceUUID)
-        let service = CBMutableService(type: serviceUUID, primary: true)
-        let charactericUUID = CBUUID(string: Uuids.characteristicUUID)
-        characteristic = CBMutableCharacteristic(type: charactericUUID, properties: CBCharacteristicProperties.read, value: json, permissions: CBAttributePermissions.readable)
-        service.characteristics = [characteristic]
-        self.peripheralManager.add(service)
-        
-        let advertisementData = [CBAdvertisementDataServiceUUIDsKey:[service.uuid]] as [String : Any]
-        peripheralManager.startAdvertising(advertisementData)
-        _ = Timer.scheduledTimer(timeInterval: 180.0, target: self, selector: #selector(stopAdvertise), userInfo: nil, repeats: false)
-        
-        vc?.changedEvent(data)
-        let nextVC = self.storyboard!.instantiateViewController(withIdentifier: "MatchViewController")
-        if let vc = nextVC as? MatchViewController{
-            vc.data = data
-            vc.from = 1
-        }
-        present(nextVC, animated: true, completion: nil)
-        
-    }
-    
-    func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
-        print("state: \(peripheral.state)")
-    }
-    
-    func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {
-        if error != nil {
-            print("service add failed...")
-            return
-        }
-        print("service add success!")
-    }
-    
-    //  advertise result
-    func peripheralManagerDidStartAdvertising(_ peripheral: CBPeripheralManager, error: Error?) {
-        if error != nil {
-            print("advertising error...")
-            return
-        }
-        print("advertising success!")
-    }
-    
-    func stopAdvertise() {
-        peripheralManager.stopAdvertising()
-        print("advertise stopped")
-    }
+    }    
 }

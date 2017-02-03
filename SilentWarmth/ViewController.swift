@@ -50,7 +50,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, C
         let back = UIBarButtonItem()
         back.title = ""
         self.navigationItem.backBarButtonItem = back
-        self.title = "Silent Warmth"
+        self.title = "てれぱしあ"
         
         centralManager = CBCentralManager(delegate: self, queue: nil)
         centralManager.delegate = self
@@ -178,13 +178,9 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, C
                     if !bool {
                         ary.append(json)
                         setPush(data: json)
-                        do {
-                            let sendData:[String: Any] = json
-                            print("data = \(sendData)")
-                            try WCSession.default().transferUserInfo(sendData)
-                        } catch {
-                            print("update application  error")
-                        }
+                        let sendData:[String: Any] = json
+                        print("data = \(sendData)")
+                        WCSession.default().transferUserInfo(sendData)
                         print(json)
                     }
                 }
@@ -212,19 +208,13 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, C
         guard let contentVC = storyboard.instantiateViewController(withIdentifier: "TestViewController") as? TestViewController else{
             return
         }
-        //define use of popover
         contentVC.modalPresentationStyle = .popover
-        //set size
         contentVC.preferredContentSize = CGSize(width: UIScreen.main.bounds.width, height: 300)
-        //set origin
         contentVC.popoverPresentationController?.sourceView = view
         contentVC.popoverPresentationController?.sourceRect = sender.frame
-        //set arrow direction
         contentVC.popoverPresentationController?.permittedArrowDirections = .up
-        //set delegate
         contentVC.popoverPresentationController?.delegate = self
         contentVC.ary = ary
-        //present
         present(contentVC, animated: true, completion: nil)
     }
     

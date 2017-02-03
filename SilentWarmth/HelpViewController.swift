@@ -12,6 +12,7 @@ class HelpViewController: BaseViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var userColor: UIPickerView!
     @IBOutlet weak var otherColor: UIPickerView!
+    private var flag = false
     
     override func viewDidLoad() {
         closeButton.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI_4))
@@ -28,11 +29,20 @@ class HelpViewController: BaseViewController, UIPickerViewDelegate, UIPickerView
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        UIApplication.shared.setStatusBarStyle(.lightContent, animated: true)
+        flag = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        UIApplication.shared.setStatusBarStyle(.default, animated: true)
+        flag = false
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        get{
+            if flag {
+                return .lightContent
+            }
+            return .default
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
